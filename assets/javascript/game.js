@@ -17,12 +17,37 @@ document.getElementById("losses").innerHTML = "Losses: " + losses;
 document.getElementById("guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
 document.getElementById("guessesSoFar").innerHTML = "Your Guesses So Far: " + guessesSoFar;
 
+	function reset(){
+	wins=0;
+	losses=0;
+	guessesLeft=0;
+	guessesSoFar=0;
 
-	onKeyup=function(event){
+	};
+
+
+
+	onkeyup=function(event){
 	var playerGuess = event.key.toLowerCase();
-	alert(playerGuess);
 	guessesLeft--;
-}
+	document.getElementById("guessesLeft").innerHTML = "Gusses Left: " + guessesLeft;
+	/*This will dynamically update HTML"*/
+
+
+	if (guessesLeft > 0 && playerGuess == randomLetter){
+		wins++;
+		document.getElementById("wins").innerHTML = "Wins: " + wins;
+		reset();
+	}
+	if (guessesLeft == 0){
+		losses++;
+		document.getElementById("losses").innerHTML = "Losses: " + losses;
+		reset();
+	}
+	
+	}
+
+
 
 
 
