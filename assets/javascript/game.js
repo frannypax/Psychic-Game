@@ -25,6 +25,9 @@ var initGame = function(){
 	document.getElementById("losses").innerHTML = "Losses: " + losses;
 	document.getElementById("guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
 	document.getElementById("guessesSoFar").innerHTML = "Guesses So Far: " + guessedLetters;
+	/* initGame function will all game stats to defaults except wins and losses
+	lines 24-27 will display game stats on HTML page*/
+
 };
 
 initGame();
@@ -32,6 +35,7 @@ initGame();
 	onkeyup=function(event){
 	var playerGuess = event.key.toLowerCase();
 	guessesLeft--;
+
 	document.getElementById("guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
 	/*This will dynamically update guesses left on the HTML page"*/
 
@@ -39,6 +43,7 @@ initGame();
 	guessedLetters.push(playerGuess);
 	console.log(guessedLetters);
 	/*push will update the guessedLetters array - place new entry at the end*/
+
 	document.getElementById("guessesSoFar").innerHTML = "Guesses So Far: " + guessedLetters;
 	/*This will dynamically update guesses so far on the HTML page"*/
 
