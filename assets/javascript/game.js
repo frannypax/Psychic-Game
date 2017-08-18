@@ -55,7 +55,6 @@ initGame();
 		document.getElementById("losses").innerHTML = "Losses: " + losses;
 		
 	}
-	/*if statements to determine what will happen as player starts hitting keys*/ 
 	}
 
 
